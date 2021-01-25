@@ -30,6 +30,7 @@ class CreateProductService {
       price,
       quantity,
     });
+
     return product;
   }
 }

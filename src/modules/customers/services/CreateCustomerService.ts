@@ -24,7 +24,10 @@ class CreateCustomerService {
       throw new AppError('this e-mail is already assigned to a customer');
     }
 
-    const customer = await this.customersRepository.create({ name, email });
+    const customer = await this.customersRepository.create({
+      name,
+      email,
+    });
 
     return customer;
   }

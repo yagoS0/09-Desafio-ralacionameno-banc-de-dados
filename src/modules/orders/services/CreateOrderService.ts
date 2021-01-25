@@ -66,7 +66,7 @@ class CreateOrderService {
       );
     }
 
-    const serializedProducts = products.map(product => ({
+    const serializedProducts = await products.map(product => ({
       product_id: product.id,
       quantity: product.quantity,
       price: existentProducts.filter(p => p.id === product.id)[0].price,
@@ -77,7 +77,7 @@ class CreateOrderService {
       products: serializedProducts,
     });
 
-    const orderedProductsQuantity = products.map(product => ({
+    const orderedProductsQuantity = await products.map(product => ({
       id: product.id,
       quantity:
         existentProducts.filter(p => p.id === product.id)[0].quantity -

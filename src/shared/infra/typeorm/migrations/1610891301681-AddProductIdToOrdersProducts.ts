@@ -11,7 +11,7 @@ export default class AddProductIdToOrdersProducts1610891301681
     await queryRunner.addColumn(
       'orders_products',
       new TableColumn({
-        name: 'products_id',
+        name: 'product_id',
         type: 'uuid',
         isNullable: true,
       }),
@@ -21,7 +21,7 @@ export default class AddProductIdToOrdersProducts1610891301681
       'orders_products',
       new TableForeignKey({
         name: 'OrdersProductsProduct',
-        columnNames: ['products_id'],
+        columnNames: ['product_id'],
         referencedColumnNames: ['id'],
         referencedTableName: 'products',
         onDelete: `SET NULL`,
